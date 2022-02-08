@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#A7FFEB"
+        android:orientation="vertical"
+        android:padding="10px">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#009688"
+            android:fontFamily="serif"
+            android:padding="4dp"
+            android:text="Wprowadź poniższe wielkości i kliknij 'oblicz'"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#3C3F41"
+            android:textSize="14sp"
+            android:textStyle="bold|italic" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="5dp">
+
+            <TextView
+                android:text="Czas cyklu (s): "
+                style="@style/input_info_style" />
+
+            <EditText
+                android:id="@+id/cycleTime"
+                android:inputType="numberDecimal"
+                style="@style/input_style"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:text="Wielkość formy (wybierz liczbę gniazd): "
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            style="@style/input_info_style"/>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:drawable/divider_horizontal_textfield"
+            android:layout_gravity="left"
+            android:layout_margin="5dp">
+
+            <RadioGroup
+                android:id="@+id/cavityNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <RadioButton
+                    android:text="1"
+                    style="@style/radio_button_style" />
+
+                <RadioButton
+                    android:text="2"
+                    style="@style/radio_button_style"/>
+
+                <RadioButton
+                    android:text="3"
+                    style="@style/radio_button_style"/>
+
+                <RadioButton
+                    android:text="4"
+                    style="@style/radio_button_style"/>
+
+                <RadioButton
+                    android:text="5"
+                    style="@style/radio_button_style"/>
+
+                <RadioButton
+                    android:text="6"
+                    style="@style/radio_button_style"/>
+
+                <RadioButton
+                    android:text="7"
+                    style="@style/radio_button_style"/>
+
+                <RadioButton
+                    android:text="8"
+                    style="@style/radio_button_style"/>
+
+                <RadioButton
+                    android:text="9"
+                    style="@style/radio_button_style"/>
+
+                <RadioButton
+                    android:text="10"
+                    style="@style/radio_button_style"/>
+
+            </RadioGroup>
+        </HorizontalScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <TextView
+                android:text="Ilość do wyprodukowania: "
+                style="@style/input_info_style"/>
+
+            <EditText
+                android:id="@+id/quantity"
+                style="@style/input_style"
+                android:layout_width="match_parent"
+                android:inputType="number" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimary"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <TextView
+                android:text="Przemnóż: "
+                style="@style/input_info_style"/>
+
+            <EditText
+                android:id="@+id/multiply"
+                android:inputType="numberDecimal"
+                android:text="1"
+                style="@style/input_style"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimary"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <TextView
+                android:text="Waga produktu (g): "
+                style="@style/input_info_style"/>
+
+            <EditText
+                android:id="@+id/grams"
+                android:inputType="numberDecimal"
+                style="@style/input_style" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button"
+            android:drawableLeft="@android:drawable/arrow_down_float"
+            android:drawableRight="@android:drawable/arrow_down_float"
+            android:onClick="onClick"
+            android:text="Oblicz"
+            style="@style/button_style" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#009688"
+            android:gravity="center_vertical"
+            android:stretchColumns="2"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <TableRow android:padding="10px">
+
+                <TextView
+
+                    android:text="Podany czas cyklu: "
+                    style="@style/tablerow_info_style"/>
+
+                <TextView
+                    android:id="@+id/currentCycleTime"
+                    style="@style/table_row_display"/>
+
+            </TableRow>
+
+
+            <TableRow android:padding="10px">
+
+                <TextView
+                    android:text="Wydajność (szt./godz.): "
+                    style="@style/tablerow_info_style"/>
+
+                <TextView
+                    android:id="@+id/hEfficiency"
+                    style="@style/table_row_display"/>
+
+            </TableRow>
+
+            <TableRow
+                android:padding="10px">
+
+                <TextView
+                    android:text="Potrzebny materiał (kg): "
+                    style="@style/tablerow_info_style"/>
+
+                <TextView
+
+                    android:id="@+id/weightNeeded"
+                    style="@style/table_row_display"/>
+
+            </TableRow>
+
+            <TableRow
+                android:padding="10px"
+                android:layout_width="match_parent">
+
+                <TextView
+                    android:text="Czas realizacji produkcji: "
+                    style="@style/tablerow_info_style"/>
+
+                <TextView
+
+                    android:id="@+id/goalTime"
+                    style="@style/table_row_display"/>
+
+            </TableRow>
+
+            <TableRow
+                android:padding="10px">
+
+                <TextView
+
+                    android:text="Przewidywana godzina realizacji: "
+                    style="@style/tablerow_info_style"/>
+
+                <TextView
+
+                    android:id="@+id/hour"
+                    style="@style/table_row_display"/>
+
+            </TableRow>
+
+        </TableLayout>
+
+        <Button
+            android:id="@+id/resetButton"
+            android:drawableLeft="@drawable/ic_refresh_white_18dp"
+            android:drawableRight="@drawable/ic_refresh_white_18dp"
+            android:onClick="reset"
+            android:text="Reset"
+            style="@style/button_style"/>
+
+        <Button
+            android:id="@+id/quitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:background="#000000"
+            android:onClick="quit"
+            android:text="Zakończ"
+            android:textColor="#009688"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TG 2021"
+            android:textSize="8sp"
+            android:padding="5dp"
+            android:layout_gravity="right"/>
+
+    </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
